@@ -1,0 +1,24 @@
+{% extends "surveys/base.html" %}
+
+{% block content %}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Survey</th>
+            <th>Measured Depth</th>
+            <th>Inclination</th>
+            <th>Azimuth</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for survey in surveys %}
+      <tr>
+            <td>{{ survey.well }}</td>
+            <td>{{ survey.measured_depth }}</td>
+            <td>{{ survey.inclination }}</td>
+            <td>{{ survey.azimuth }}</td>
+        </tr>
+{% endfor %}  
+    </tbody>
+    </table>
+{% endblock  %}
