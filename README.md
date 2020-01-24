@@ -1,2 +1,2 @@
 # welldata
-A personal project to build Django skills
+A personal project in Python to build Django skills
