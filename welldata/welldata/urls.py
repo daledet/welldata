@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.models import SurveyResource
+from . import views
+
+survey_resource = SurveyResource()
 
 urlpatterns = [
+    path('', views.home),
     path('admin/', admin.site.urls),
-    path('surveys/', include('surveys.urls'))
+    path('surveys/', include('surveys.urls')),
+    path('api/', include(survey_resource.urls))
 ]

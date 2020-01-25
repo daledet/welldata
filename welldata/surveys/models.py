@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Well(models.Model):
-    name = models.CharField(max_length=50)
+    well_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
@@ -14,3 +14,6 @@ class Survey(models.Model):
     inclination = models.FloatField(max_length=10)
     azimuth = models.FloatField(max_length=10)
     well = models.ForeignKey(Well, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name

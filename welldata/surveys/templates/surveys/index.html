@@ -1,10 +1,10 @@
-{% extends "surveys/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Survey</th>
+            <th>Well Name</th>
             <th>Measured Depth</th>
             <th>Inclination</th>
             <th>Azimuth</th>
@@ -13,7 +13,9 @@
     <tbody>
 {% for survey in surveys %}
       <tr>
-            <td>{{ survey.well }}</td>
+            <td>
+            <a href="{% url 'surveys:detail' survey.id %}">{{ survey.well }}</a>
+            </td>
             <td>{{ survey.measured_depth }}</td>
             <td>{{ survey.inclination }}</td>
             <td>{{ survey.azimuth }}</td>
